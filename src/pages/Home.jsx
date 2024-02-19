@@ -21,6 +21,8 @@ const Home = () => {
                 </p>
 
                 <button className="btn">Request an appointement</button>
+
+                <span>slaut les gars</span>
               </div>
             </div>
           </div>
