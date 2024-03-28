@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import {BiMenu} from "react-icons/bi"
 
-import logo from "../../assets/images/logo.png";
+// import logo from "../../assets/images/logo.png";
 import userImg from "../../assets/images/avatar-icon.png";
 
 const Header = () => {
@@ -34,12 +34,20 @@ const Header = () => {
       display: "Home",
     },
     {
-      path: "/doctors",
-      display: "Find a Doctor",
+      path: "/projects",
+      display: "projects",
     },
     {
       path: "/services",
       display: "Services",
+    },
+    {
+      path: "/skill",
+      display: "Skill",
+    },
+    {
+      path: "/education",
+      display: "Education",
     },
     {
       path: "/contact",
@@ -48,12 +56,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="header flex items-center justify-around" ref={headerRef}>
+    <header className="header flex items-center justify-around z-50" ref={headerRef}>
       <div className="container">
         <div className="flex items-center justify-between">
-          <div>
+          <div className="text-white text-[1.5rem] cursor-pointer font-extrabold hover:scale-110 transition-all  ">
             <Link to="/">
-              <img src={logo} alt="logo medicare" />
+              {/* <img src={logo} alt="logo medicare" /> */}
+              Will-Turner
             </Link>
           </div>
 
@@ -66,8 +75,8 @@ const Header = () => {
                     to={link.path}
                     className={(navClass) =>
                       navClass.isActive
-                        ? "text-primaryColor text-[16px] leading-7 font-[600]"
-                        : "text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
+                        ? "text-primaryColor text-[20px] md:text-[16px] leading-7 font-[600] "
+                        : "text-white text-[20px] md:text-[16px] leading-7 font-[500] hover:text-primaryColor hover:underline"
                     }
                   >
                     {link.display}
